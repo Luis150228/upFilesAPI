@@ -1,0 +1,47 @@
+@api = http://localhost/jsfilestext_api/
+
+POST {{api}}rutes/factura.php
+# x-access-token: {{tokengod}}
+Content-Type: application/json; charset=UTF-8
+
+    {
+        "cta":"N000180001",
+        "recargos":"8554.62",
+        "actualiza":"1141.91",
+        "total":"17304.17"
+    },{
+        "cta":"A000182001",
+        "recargos":"7153.26",
+        "actualiza":"946.58",
+        "total":"14365.91"
+    },{
+        "cta":"A000183001",
+        "recargos":"3818.35",
+        "actualiza":"531.10",
+        "total":"9714.89"
+    },{
+        "cta":"A000184001",
+        "recargos":"21.43",
+        "actualiza":"5.00",
+        "total":"378.62"
+    },{
+        "cta":"A000187001",
+        "recargos":"25607.58",
+        "actualiza":"5260.72",
+        "total":"42059.76"
+    },{
+        "cta":"A000188001",
+        "recargos":"16.37",
+        "actualiza":"3.82",
+        "total":"1634.73"
+    },{
+        "cta":"A000189001",
+        "recargos":"75.30",
+        "actualiza":"17.57",
+        "total":"7516.97"
+    },{
+        "cta":"A000193001",
+        "recargos":"5.79",
+        "actualiza":"1.35",
+        "total":"578.34"
+    }
