@@ -15,14 +15,11 @@ class ClassFactura extends cnx {
             $imp_recargos = $row['recargos'];
             $inpc = $row['actualiza'];
             $imp_total = $row['total'];
-            // $data = 'saveFactura('.$ncta.', '.$imp_recargos.', '.$inpc.', '.$imp_total.')</br>';
-            // $data = $this->saveFactura($ncta, $imp_recargos, $inpc, $imp_total);
-            // echo $data;
-            // return $data;
-            $save = $this->saveFactura($ncta, $imp_recargos, $inpc, $imp_total);
-            echo $save;
+            $save = [$this->saveFactura($ncta, $imp_recargos, $inpc, $imp_total)];
+            // echo $save;
         };
-
+        return $save;
+        
     }
 
     private function saveFactura($ncta, $imp_recargos, $inpc, $imp_total)
@@ -30,7 +27,7 @@ class ClassFactura extends cnx {
         $sql = "call saveFactura('$ncta', '$imp_recargos', '$inpc', '$imp_total')";
         // print_r($sql);
         $query = parent::getDataPa($sql);
-        print_r($query);
+        // print_r($query);
         return $query;
     }
 }
