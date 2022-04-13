@@ -1,6 +1,6 @@
 <?php
-include_once ($_SERVER['DOCUMENT_ROOT']."/jsfilestext_api/path.php");
-include( CLASS_PATH.'factura.class.php');
+require_once '../classes/factura.class.php';
+require_once '../classes/codes.class.php';
 
 $_factura = new ClassFactura;
 $_cod = new codigosnum;

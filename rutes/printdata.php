@@ -1,6 +1,6 @@
 <?php
-include_once ($_SERVER['DOCUMENT_ROOT']."/jsfilestext_api/path.php");
-include( CLASS_PATH.'printerPdf.class.php');
+require_once '../classes/printerPdf.class.php';
+require_once '../classes/codes.class.php';
 
 $_ppdf = new ClassPrinterPDF;
 $_cod = new codigosnum;

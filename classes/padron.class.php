@@ -1,7 +1,6 @@
 <?php
-include_once ($_SERVER['DOCUMENT_ROOT']."/jsfilestext_api/path.php");
-include (CONECT_PATH.'cnx.php');
-include(CLASS_PATH.'codes.class.php');
+require_once '../conexion/cnx.php';
+require_once '../classes/codes.class.php';
 
 class ClassPadron extends cnx {
 

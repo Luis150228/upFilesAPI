@@ -1,6 +1,6 @@
 <?php
-include_once ($_SERVER['DOCUMENT_ROOT']."/jsfilestext_api/path.php");
-include( CLASS_PATH.'padron.class.php');
+require_once '../classes/padron.class.php';
+require_once '../classes/codes.class.php';
 
 $_padron = new ClassPadron;
 $_cod = new codigosnum;
