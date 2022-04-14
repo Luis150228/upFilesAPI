@@ -1,14 +1,7 @@
 <?php
-<<<<<<< HEAD
-// include_once ($_SERVER['DOCUMENT_ROOT']."/public_html/path.php");
-// include( CLASS_PATH.'padron.class.php');
-require_once '../classes/padron.class.php'; 
-require_once '../classes/codes.class.php'; 
-=======
 require_once '../classes/padron.class.php';
 require_once '../classes/codes.class.php';
 
->>>>>>> 61e18ae22f8f8d8045123495a42fe8c782b9eb60
 $_padron = new ClassPadron;
 $_cod = new codigosnum;
 header('Access-Control-Allow-Origin: *');
