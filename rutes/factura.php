@@ -1,6 +1,10 @@
 <?php
 require_once '../classes/factura.class.php';
 require_once '../classes/codes.class.php';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 61e18ae22f8f8d8045123495a42fe8c782b9eb60
 $_factura = new ClassFactura;
 $_cod = new codigosnum;
 

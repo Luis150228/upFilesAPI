@@ -1,5 +1,11 @@
 <?php
+<<<<<<< HEAD
 include_once '../conexion/cnx.php';
+=======
+require_once '../conexion/cnx.php';
+require_once '../classes/codes.class.php';
+
+>>>>>>> 61e18ae22f8f8d8045123495a42fe8c782b9eb60
 class ClassFactura extends cnx {
 
     public function ctaFactura($json){
@@ -27,7 +33,5 @@ class ClassFactura extends cnx {
         return $query;
     }
 }
-
-
 
 ?>
