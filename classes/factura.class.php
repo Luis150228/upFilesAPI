@@ -1,14 +1,10 @@
 <?php
-include_once ($_SERVER['DOCUMENT_ROOT']."/jsfilestext_api/path.php");
-include (CONECT_PATH.'cnx.php');
-include(CLASS_PATH.'codes.class.php');
-
+include_once '../conexion/cnx.php';
 class ClassFactura extends cnx {
 
     public function ctaFactura($json){
-        $_cod = new codigosnum;
         $info = json_decode($json, true);
-        
+        // echo $info;
         foreach($info as $row){
             // print_r($row);
             $ncta = $row['cta'];
@@ -16,7 +12,7 @@ class ClassFactura extends cnx {
             $inpc = $row['actualiza'];
             $imp_total = $row['total'];
             $save = [$this->saveFactura($ncta, $imp_recargos, $inpc, $imp_total)];
-            // echo $save;
+            // echo $ncta;
         };
         return $save;
         

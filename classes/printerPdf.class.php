@@ -1,7 +1,5 @@
 <?php
-include_once ($_SERVER['DOCUMENT_ROOT']."/jsfilestext_api/path.php");
-include (CONECT_PATH.'cnx.php');
-include(CLASS_PATH.'codes.class.php');
+include_once '../conexion/cnx.php';
 
 class ClassPrinterPDF extends cnx {
 

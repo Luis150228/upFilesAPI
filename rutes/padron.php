@@ -1,16 +1,26 @@
 <?php
-include_once ($_SERVER['DOCUMENT_ROOT']."/jsfilestext_api/path.php");
-include( CLASS_PATH.'padron.class.php');
-
+// include_once ($_SERVER['DOCUMENT_ROOT']."/public_html/path.php");
+// include( CLASS_PATH.'padron.class.php');
+require_once '../classes/padron.class.php'; 
+require_once '../classes/codes.class.php'; 
 $_padron = new ClassPadron;
 $_cod = new codigosnum;
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Methods: POST");
+header("Allow: POST");
+// header('Access-Control-Allow-Origin: *');
+// header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
+// header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+// header("Allow: GET, POST, OPTIONS, PUT, DELETE");
+$method = $_SERVER['REQUEST_METHOD'];
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($method == 'POST') {
     $contBody = file_get_contents('php://input');
     $dataClass = $_padron->ctaPadron($contBody);
     // print_r($dataClass);
     $resp = json_encode($dataClass, true);
-    // print_r($dataClass[0][0]['code']);
+    // print_r($dataClass[0][0]);
 
     if ($dataClass[0][0]['code'] == 200) {
         http_response_code($dataClass[0][0]['code']);
@@ -20,10 +30,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $errClass = $_cod->code_204();
         http_response_code($errClass['message']['code']);
     }
-    
-
 } else {
-    http_response_code(416);
+    http_response_code(205);
     header('Content-Type: application/json; charset=UTF-8');
 }
 

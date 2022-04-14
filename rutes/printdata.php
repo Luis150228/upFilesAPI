@@ -1,9 +1,14 @@
 <?php
-include_once ($_SERVER['DOCUMENT_ROOT']."/jsfilestext_api/path.php");
-include( CLASS_PATH.'printerPdf.class.php');
+require_once '../classes/printerPdf.class.php';
+require_once '../classes/codes.class.php';
 
 $_ppdf = new ClassPrinterPDF;
 $_cod = new codigosnum;
+
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Methods: POST");
+header("Allow: POST");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $contBody = file_get_contents('php://input');
@@ -31,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
 
 } else {
-    http_response_code(416);
+    http_response_code(205);
     header('Content-Type: application/json; charset=UTF-8');
 }
 

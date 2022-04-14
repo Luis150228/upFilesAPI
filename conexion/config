@@ -1,7 +1,7 @@
 {
-        "dcnx":{
-        "dns": "mysql:dbname=carteo;host=127.0.0.1",
-        "user": "root",
-        "password": ""
-    }
+    "dcnx":{
+    "dns": "mysql:dbname=u170798671_catovatech;host=185.201.11.181",
+    "user": "u170798671_xyzcatovatech",
+    "password": "F3nixFree15"
+}
 }

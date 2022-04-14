@@ -1,12 +1,9 @@
 <?php
-include_once ($_SERVER['DOCUMENT_ROOT']."/jsfilestext_api/path.php");
-include (CONECT_PATH.'cnx.php');
-include(CLASS_PATH.'codes.class.php');
-
+include_once '../conexion/cnx.php';
 class ClassPadron extends cnx {
 
     public function ctaPadron($json){
-        $_cod = new codigosnum;
+        // $_cod = new codigosnum;
         $info = json_decode($json, true);
         // print_r($info);
         foreach($info as $row){
@@ -24,7 +21,7 @@ class ClassPadron extends cnx {
             $perRezag = $row['perRezag'];
 
             $save = [$this->savePadron($cta, $calle, $numExt, $numInt, $colonia, $causante, $otros, $rezago, $corriente, $perCorriente, $perRezag)];            
-            // echo $save;
+            // echo $cta;
         };
         return $save;
         
@@ -37,6 +34,7 @@ class ClassPadron extends cnx {
         $query = parent::getDataPa($sql);
         // print_r($query);
         return $query;
+        // return $sql;
     }
 }
 
